@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+
+<body>
+    <input type="text" id="text-input">
+    <button id="check-btn" onclick=handleClick()>Check Palindrome</button>
+    <p id="result"></p>
+    <script>
+       
+        function handleClick() {
+            const text = document.getElementById('text-input').value
+            const text_copy = text.split("")
+            for (let i = 0; i < text_copy.length; i++) {
+                if (text_copy[i].toLowerCase() >= "a" && text_copy[i].toLowerCase() <= "z") {
+                    text_copy[i] = text_copy[i].toLowerCase();
+                } else if (text_copy[i] >= "0" && text_copy[i] <= "9") {
+                    continue
+                } else {
+                    text_copy[i] = "";
+                }
+            }
+
+            if (text === "") {
+                alert("Please input a value");
+            } else if (text_copy.join("") === text_copy.reverse().join("")) {
+                document.getElementById("result").innerHTML = `${text} is a palindrome`;
+            } else {
+                document.getElementById("result").innerHTML = `${text} is not a palindrome`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
