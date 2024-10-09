@@ -53,7 +53,7 @@ function convertRoman(number){
             roman.push("I")
             number -= 1
         }
-    // }        
+    }        
     // console.log(roman.join(""))
-    return document.getElementById('output').innerHTML = roman.join("")
+    document.getElementById('output').innerHTML = roman.join("")
 }
